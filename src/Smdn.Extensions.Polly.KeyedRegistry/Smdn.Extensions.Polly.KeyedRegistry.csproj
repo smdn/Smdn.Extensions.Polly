@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 SPDX-FileCopyrightText: 2025 smdn <smdn@smdn.jp>
 SPDX-License-Identifier: MIT
 -->
@@ -30,7 +30,17 @@ This enables multiple `ResiliencePipelineProvider`s targeting the same type to b
     <PackageReference Include="Polly.Extensions" Version="8.0.0" />
   </ItemGroup>
 
-  <Target Name="GenerateReadmeFileContent">
+  <ItemGroup>
+    <!-- Third party notice -->
+    <None
+      Include="$(MSBuildThisFileDirectory)..\..\ThirdPartyNotices.md"
+      Pack="true"
+      PackagePath="ThirdPartyNotices.md"
+      CopyToOutputDirectory="None"
+    />
+  </ItemGroup>
+
+  <Target Name="GenerateReadmeFileContent" DependsOnTargets="ReadReadmeFileNoticeSectionContent">
     <PropertyGroup>
       <PackageReadmeFileContent><![CDATA[# $(PackageId) $(PackageVersion)
 $(Description)
@@ -46,6 +56,9 @@ More examples can be found on the [GitHub repository]($(RepositoryUrl)/tree/$(Sm
 
 ## Contributing
 This project welcomes contributions, feedbacks and suggestions. You can contribute to this project by submitting [Issues]($(RepositoryUrl)/issues/new/choose) or [Pull Requests]($(RepositoryUrl)/pulls/) on the [GitHub repository]($(RepositoryUrl)).
+
+## Notice
+$(ReadmeFileNoticeSectionContent)
 ]]></PackageReadmeFileContent>
     </PropertyGroup>
   </Target>
