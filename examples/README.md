@@ -1,4 +1,4 @@
-# Examples for Smdn.Fundamentals libraries
+# Examples for Smdn.Extensions.Polly.* libraries
 
 ## How to run examples
 Move to each example directory and execute the command `dotnet run`.
