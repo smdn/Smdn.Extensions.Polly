@@ -1,0 +1,12 @@
+﻿<!--
+SPDX-FileCopyrightText: 2026 smdn <smdn@smdn.jp>
+SPDX-License-Identifier: MIT
+-->
+<Solution>
+  <Folder Name="/src/Smdn.Extensions.Polly.KeyedRegistry/">
+    <Project Path="src/Smdn.Extensions.Polly.KeyedRegistry/Smdn.Extensions.Polly.KeyedRegistry.csproj" />
+  </Folder>
+  <Folder Name="/tests/Smdn.Extensions.Polly.KeyedRegistry/">
+    <Project Path="tests/Smdn.Extensions.Polly.KeyedRegistry/Smdn.Extensions.Polly.KeyedRegistry.Tests.csproj" />
+  </Folder>
+</Solution>

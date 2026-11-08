@@ -1,0 +1,9 @@
+﻿<!--
+SPDX-FileCopyrightText: 2026 smdn <smdn@smdn.jp>
+SPDX-License-Identifier: MIT
+-->
+<Solution>
+  <Folder Name="/Smdn.Extensions.Polly.KeyedRegistry/GettingStarted/">
+    <Project Path="Smdn.Extensions.Polly.KeyedRegistry/GettingStarted/Program.csproj" />
+  </Folder>
+</Solution>
