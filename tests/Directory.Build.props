@@ -1,0 +1,26 @@
+﻿<!--
+SPDX-FileCopyrightText: 2021 smdn <smdn@smdn.jp>
+SPDX-License-Identifier: MIT
+-->
+<Project>
+  <Import Project="Sdk.props" Sdk="Smdn.MSBuild.ProjectAssets.Library" />
+
+  <Import
+    Condition=" '$(IsTestProject)' == 'true' "
+    Project="$(MSBuildThisFileDirectory)TargetFrameworks.props"
+  />
+
+  <ItemGroup Condition=" '$(IsTestProject)' == 'true' ">
+    <PackageReference Include="NUnit" Version="5.0.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference
+      Include="Smdn.MSBuild.DefineConstants.NETSdkApi"
+      Version="[1.8.4]"
+      PrivateAssets="all"
+      IncludeAssets="build"
+    />
+  </ItemGroup>
+</Project>
