@@ -1,0 +1,32 @@
+﻿<!--
+SPDX-FileCopyrightText: 2021 smdn <smdn@smdn.jp>
+SPDX-License-Identifier: MIT
+-->
+<Project>
+  <Import Project="Sdk.props" Sdk="Smdn.MSBuild.ProjectAssets.Library" />
+
+  <PropertyGroup Label="Configurations for Smdn.MSBuild.ProjectAssets.*">
+    <SmdnBuildAssetRootDirectory>$(MSBuildThisFileDirectory)..\</SmdnBuildAssetRootDirectory>
+    <APIListOutputBaseDirectory>$(MSBuildThisFileDirectory)..\doc\api-list\</APIListOutputBaseDirectory>
+    <APIListMinPackageVersion>1.8.2</APIListMinPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="package properties">
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/smdn/Smdn.Extensions.Polly</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Label="repository properties">
+    <RepositoryUrl>https://github.com/smdn/Smdn.Extensions.Polly</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference
+      Include="Smdn.MSBuild.DefineConstants.NETSdkApi"
+      Version="[1.8.4]"
+      PrivateAssets="all"
+      IncludeAssets="build"
+    />
+  </ItemGroup>
+</Project>

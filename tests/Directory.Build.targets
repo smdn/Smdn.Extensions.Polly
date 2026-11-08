@@ -1,0 +1,15 @@
+﻿<!--
+SPDX-FileCopyrightText: 2022 smdn <smdn@smdn.jp>
+SPDX-License-Identifier: MIT
+-->
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)TestReleasedPackage.targets" Condition=" '$(IsTestProject)' == 'true' " />
+
+  <ItemGroup>
+    <!-- <PackageReference Update="NUnit.Analyzers" Version="4.15.0"/> -->
+    <!-- <PackageReference Update="Smdn.Test.NUnit.Constraints" Version="4.2.0" /> -->
+    <!-- <PackageReference Update="Smdn.Test.NUnit.Utils" Version="5.0.0" /> -->
+  </ItemGroup>
+
+  <Import Project="Sdk.targets" Sdk="Smdn.MSBuild.ProjectAssets.Library" />
+</Project>
