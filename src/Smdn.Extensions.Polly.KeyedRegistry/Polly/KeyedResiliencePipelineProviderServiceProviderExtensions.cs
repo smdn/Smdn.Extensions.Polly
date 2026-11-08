@@ -13,7 +13,22 @@ using Polly.Registry.KeyedRegistry;
 
 namespace Polly;
 
+/// <summary>
+/// Provides extension methods that obtains a <see cref="ResiliencePipelineProvider{TKey}"/>
+/// from an <see cref="IServiceProvider"/> using an <see cref="IResiliencePipelineKeyPair{TServiceKey, TPipelineKey}"/>
+/// as the key.
+/// </summary>
 public static class KeyedResiliencePipelineProviderServiceProviderExtensions {
+  /// <summary>
+  /// Retrieves a <see cref="ResiliencePipelineProvider{TPipelineKey}"/> from <see cref="IServiceProvider"/>
+  /// that has a key specified by <paramref name="serviceKey"/> of the type represented
+  /// by the <paramref name="typeOfKeyPair"/>.
+  /// </summary>
+  /// <typeparam name="TPipelineKey">The type for the pipeline key.</typeparam>
+  /// <returns>
+  /// Returns the <see cref="ResiliencePipelineProvider{TPipelineKey}"/> if it was obtained;
+  /// otherwise, returns <see langword="null"/>.
+  /// </returns>
   [CLSCompliant(false)] // ResiliencePipelineProvider is CLS incompliant
   public static ResiliencePipelineProvider<TPipelineKey>? GetKeyedResiliencePipelineProvider<TPipelineKey>(
     this IServiceProvider serviceProvider,

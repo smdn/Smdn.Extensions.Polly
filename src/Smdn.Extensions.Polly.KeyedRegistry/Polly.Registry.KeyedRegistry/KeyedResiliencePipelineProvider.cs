@@ -40,6 +40,24 @@ public class KeyedResiliencePipelineProvider<TResiliencePipelineKeyPair, TServic
   /// </summary>
   public ResiliencePipelineProvider<TResiliencePipelineKeyPair> BaseProvider { get; }
 
+  /// <summary>
+  /// Initializes a new instance of the <see cref="KeyedResiliencePipelineProvider{TResiliencePipelineKeyPair, TServiceKey, TPipelineKey}"/> class.
+  /// </summary>
+  /// <param name="serviceKey">
+  /// The service key associate with this <see cref="ResiliencePipelineProvider{TKey}"/>.
+  /// </param>
+  /// <param name="baseProvider">
+  /// The <see cref="ResiliencePipelineProvider{TKey}"/> that is the base for and is wrapped by this instance.
+  /// </param>
+  /// <param name="createResiliencePipelineKeyPair">
+  /// A delegate representing a factory method for creating a <typeparamref name="TResiliencePipelineKeyPair"/>
+  /// instance that represents a composite key with values of <typeparamref name="TServiceKey"/>
+  /// and <typeparamref name="TPipelineKey"/>.
+  /// </param>
+  /// <exception cref="ArgumentNullException">
+  /// Thrown when either <paramref name="baseProvider"/> or <paramref name="createResiliencePipelineKeyPair"/>
+  /// is null.
+  /// </exception>
   public KeyedResiliencePipelineProvider(
     TServiceKey serviceKey,
     ResiliencePipelineProvider<TResiliencePipelineKeyPair> baseProvider,

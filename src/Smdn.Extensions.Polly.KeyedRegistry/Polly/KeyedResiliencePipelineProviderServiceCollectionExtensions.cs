@@ -14,7 +14,19 @@ using Polly.Registry.KeyedRegistry;
 
 namespace Polly;
 
+/// <summary>
+/// Provides extension methods for registering <see cref="KeyedResiliencePipelineProvider{TResiliencePipelineKeyPair, TServiceKey, TPipelineKey}"/>
+/// to `IServiceCollection`.
+/// </summary>
+/// <seealso cref="KeyedResiliencePipelineProvider{TResiliencePipelineKeyPair, TServiceKey, TPipelineKey}"/>
+/// <seealso cref="IResiliencePipelineKeyPair{TServiceKey, TPipelineKey}"/>
+/// <seealso cref=" PollyServiceCollectionExtensions.AddResiliencePipeline{TKey}(IServiceCollection, TKey, Action{ResiliencePipelineBuilder, AddResiliencePipelineContext{TKey}})"/>
+/// <seealso cref=" PollyServiceCollectionExtensions.AddResiliencePipelineRegistry{TKey}(IServiceCollection)"/>
 public static class KeyedResiliencePipelineProviderServiceCollectionExtensions {
+  /// <inheritdoc
+  ///   cref="AddResiliencePipeline{TResiliencePipelineKeyPair, TServiceKey, TPipelineKey}(IServiceCollection, TServiceKey, TPipelineKey, Func{TServiceKey, TPipelineKey, TResiliencePipelineKeyPair}, Action{ResiliencePipelineRegistryOptions{TResiliencePipelineKeyPair}}?, Action{ResiliencePipelineBuilder, AddResiliencePipelineContext{TResiliencePipelineKeyPair}})"
+  ///   path="/summary|/remarks|/exception|/typeparam"
+  /// />
   [CLSCompliant(false)] // ResiliencePipelineBuilder is not CLS compliant
 #pragma warning disable IDE0055
   public static
@@ -59,6 +71,10 @@ public static class KeyedResiliencePipelineProviderServiceCollectionExtensions {
       args: new object?[] { serviceKey, pipelineKey }
     ) ?? throw new InvalidOperationException($"could not create instance of {typeof(TResiliencePipelineKeyPair)}"));
 
+  /// <inheritdoc
+  ///   cref="AddResiliencePipeline{TResiliencePipelineKeyPair, TServiceKey, TPipelineKey}(IServiceCollection, TServiceKey, TPipelineKey, Func{TServiceKey, TPipelineKey, TResiliencePipelineKeyPair}, Action{ResiliencePipelineRegistryOptions{TResiliencePipelineKeyPair}}?, Action{ResiliencePipelineBuilder, AddResiliencePipelineContext{TResiliencePipelineKeyPair}})"
+  ///   path="/summary|/remarks|/exception|/typeparam"
+  /// />
   [CLSCompliant(false)] // ResiliencePipelineBuilder is not CLS compliant
 #pragma warning disable IDE0055
   public static IServiceCollection AddResiliencePipeline<TResiliencePipelineKeyPair, TServiceKey, TPipelineKey>(
@@ -80,6 +96,10 @@ public static class KeyedResiliencePipelineProviderServiceCollectionExtensions {
       configurePipeline: configure
     );
 
+  /// <inheritdoc
+  ///   cref="AddResiliencePipeline{TResiliencePipelineKeyPair, TServiceKey, TPipelineKey}(IServiceCollection, TServiceKey, TPipelineKey, Func{TServiceKey, TPipelineKey, TResiliencePipelineKeyPair}, Action{ResiliencePipelineRegistryOptions{TResiliencePipelineKeyPair}}?, Action{ResiliencePipelineBuilder, AddResiliencePipelineContext{TResiliencePipelineKeyPair}})"
+  ///   path="/summary|/remarks|/exception|/typeparam"
+  /// />
   [CLSCompliant(false)] // ResiliencePipelineBuilder is not CLS compliant
 #pragma warning disable IDE0055
   public static IServiceCollection AddResiliencePipeline<TResiliencePipelineKeyPair, TServiceKey, TPipelineKey>(
@@ -102,6 +122,10 @@ public static class KeyedResiliencePipelineProviderServiceCollectionExtensions {
       configurePipeline: configurePipeline
     );
 
+  /// <inheritdoc
+  ///   cref="AddResiliencePipeline{TResiliencePipelineKeyPair, TServiceKey, TPipelineKey}(IServiceCollection, TServiceKey, TPipelineKey, Func{TServiceKey, TPipelineKey, TResiliencePipelineKeyPair}, Action{ResiliencePipelineRegistryOptions{TResiliencePipelineKeyPair}}?, Action{ResiliencePipelineBuilder, AddResiliencePipelineContext{TResiliencePipelineKeyPair}})"
+  ///   path="/summary|/remarks|/exception|/typeparam"
+  /// />
   [CLSCompliant(false)] // ResiliencePipelineBuilder is not CLS compliant
 #pragma warning disable IDE0055
   public static IServiceCollection AddResiliencePipeline<TResiliencePipelineKeyPair, TServiceKey, TPipelineKey>(
