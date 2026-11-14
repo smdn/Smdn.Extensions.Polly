@@ -29,8 +29,10 @@ This enables multiple `ResiliencePipelineProvider`s targeting the same type to b
     <PackageReference Include="Polly.Extensions" Version="8.0.0" />
   </ItemGroup>
 
-  <ItemGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0'))">
-    <!-- Update to versions with IsAotCompatible=true -->
+  <ItemGroup
+    Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0'))"
+    Label="Update to AOT-ready package version"
+  >
     <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
     <PackageReference Update="Polly.Extensions" Version="8.9.0"/>
   </ItemGroup>
